@@ -1,0 +1,2 @@
+[30-Jul-2023 12:18:12 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.21. in /home/p4v4ok05ltbr/isma1.ismaworld.com/vendor/composer/platform_check.php on line 24
+[30-Jul-2023 12:55:43 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.21. in /home/p4v4ok05ltbr/isma1.ismaworld.com/vendor/composer/platform_check.php on line 24

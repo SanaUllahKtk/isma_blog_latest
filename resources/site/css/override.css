@@ -1,0 +1,13 @@
+.unauth-comment-section input, .unauth-comment-section textarea {
+   cursor: not-allowed;
+}
+
+.unauth-comment-section{
+    opacity: 0.5;
+}
+.unauth-comment-btn{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    z-index: 9;
+}

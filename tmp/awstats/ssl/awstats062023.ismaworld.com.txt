@@ -1,0 +1,648 @@
+AWSTATS DATA FILE 7.8 (build 20200416)
+# If you remove this file, all statistics for date 202306 will be lost/reset.
+# Last config file used to build this data file was /home/p4v4ok05ltbr/tmp/awstats/ssl/awstats.ismaworld.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2018                
+POS_TIME 2684                
+POS_VISITOR 12978               
+POS_DAY 17530               
+POS_DOMAIN 3458                
+POS_LOGIN 3843                
+POS_ROBOT 3998                
+POS_WORMS 5131                
+POS_EMAILSENDER 5262                
+POS_EMAILRECEIVER 5405                
+POS_SESSION 18245               
+POS_SIDER 18419               
+POS_FILETYPES 5540                
+POS_DOWNLOADS 5811                
+POS_OS 5881                
+POS_BROWSER 6469                
+POS_SCREENSIZE 8331                
+POS_UNKNOWNREFERER 8405                
+POS_UNKNOWNREFERERBROWSER 9297                
+POS_ORIGIN 9736                
+POS_SEREFERRALS 9875                
+POS_PAGEREFS 10019               
+POS_SEARCHWORDS 11210               
+POS_KEYWORDS 11362               
+POS_MISC 2347                
+POS_ERRORS 11421               
+POS_CLUSTER 3699                
+POS_SIDER_404 11536               
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20230701011705 26 5937 12421458770849
+FirstTime 0
+LastTime 20230630234310
+LastUpdate 20230701051625 26 0 25 0 0
+TotalVisits 120                 
+TotalUnique 113                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 116                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+PDFSupport 0 0 0
+JavaEnabled 0 0 0
+FlashSupport 0 0 0
+TotalMisc 0 0 0
+AddToFavourites 0 53 0
+DirectorSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+RealPlayerSupport 0 0 0
+JavascriptDisabled 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 0 1 77018 8 15 1237841
+1 3 3 51246 21 179 2429037
+2 11 21 200744 8 17 92000
+3 8 8 89059 15 82 2241556
+4 4 10 115247 24 74 2294507
+5 4 4 62499 13 56 923254
+6 11 11 61589 20 149 1933526
+7 16 84 2022230 4 11 1185859
+8 29 78 1317527 16 32 1260502
+9 31 67 301040 18 59 902555
+10 2 2 51689 16 44 2904116
+11 6 6 76881 9 21 160174
+12 10 72 605019 5 34 507844
+13 4 19 150784 8 17 184661
+14 3 3 57942 27 86 837840
+15 6 6 25501 12 25 256850
+16 4 4 92709 11 22 275314
+17 6 6 147038 10 39 306194
+18 6 6 24094 9 18 1060140
+19 4 7 198287 5 8 527698
+20 10 74 507892 13 77 521858
+21 6 40 1034136 8 45 1128365
+22 6 24 242349 8 16 32006
+23 9 48 712763 10 20 43088
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 12
+us 117 276 2477716
+in 40 171 3020320
+ca 13 13 510225
+cn 9 24 666474
+be 5 5 43304
+nl 4 102 1325166
+ru 4 4 25126
+de 2 4 138809
+se 2 2 6285
+hn 1 1 2631
+gb 1 1 6286
+ir 1 1 2941
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 26
+bingbot/ 335 6816271 20230630232515 34
+feed 215 4561002 20230619033840 3
+Googlebot/ 157 831788 20230630152032 21
+bot[\s_+:,\.\;\/\\-] 95 1287847 20230630223546 21
+yandex 57 291537 20230630011947 0
+YandexBot/ 47 172475 20230630011937 17
+unknown 26 676 20230630144519 26
+no_user_agent 10 452945 20230630174128 0
+SemrushBot/ 10 44762 20230630144949 2
+AhrefsBot/ 6 37695 20230630144904 0
+(firefox/)([0-9]\.|[0-1][0]\.) 6 30782 20230614203155 0
+CCBot/ 4 11195 20230607123602 1
+Barkrowler 3 5874 20230605165147 1
+Applebot/ 2 52 20230606234838 2
+Konqueror/ 2 16131 20230614203142 0
+blog 1 9863 20230614203116 0
+YandexImages/ 1 117694 20230619173351 0
+Googlebot\-Video/ 1 932 20230614203142 0
+crawl 1 6286 20230616015451 0
+curl 1 0 20230601202814 0
+Links[\x20]\( 1 1280 20230614203129 0
+Googlebot\-Image/ 1 2159 20230602133622 0
+Screaming[\x20]Frog[\x20]SEO[\x20]Spider/ 1 1562 20230614203155 0
+archive\.org_bot 1 606 20230614203116 0
+Mediapartners-Google 1 932 20230602133622 0
+Wget/ 1 932 20230614203129 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 11
+svg 10 18795 0 0
+woff2 14 1382079 0 0
+html 100 1569924 0 0
+woff 15 348642 0 0
+Unknown 70 189483 0 0
+js 271 1956638 0 0
+png 18 30154 0 0
+gif 2 1263 0 0
+jpeg 16 931426 0 0
+jpg 9 1118841 0 0
+css 79 678038 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 1
+/form.docx 4 0 439264
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 38
+macosx6 1 0
+androidoreo 6 0
+bsdfreebsd 2 0
+irix 1 0
+macosx7 1 0
+palmos 1 0
+macosx8 1 0
+androidmarshmallow 3 0
+macosx15 45 38
+winxp 1 0
+winphone 1 0
+macosx13 3 0
+androidcupcake 1 0
+unix 2 0
+linux 96 32
+android 8 2
+winlong 1 0
+ios_iphone 6 1
+blackberry 1 0
+ios_ipad 1 0
+androidnougat 2 0
+os/2 4 0
+androidlollipop 2 0
+winunknown 1 0
+androidpie 6 0
+win7 22 5
+macosx 3 1
+androideclair 2 0
+bsdnetbsd 2 0
+macosx10 1 0
+Unknown 34 31
+wince 2 0
+win10 267 57
+symbian 1 0
+androidkitkat 1 0
+android10 2 0
+androidics 1 0
+macosx11 69 32
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 92
+chrome86.0.4240.198 1 0
+chrome28.0.1469.0 1 0
+opera28.0.1750.51 1 0
+firefox28.0 1 0
+firefox21.0 1 0
+chrome73.0.3683.103 2 1
+chrome25.0.1349.2 1 0
+opera86.0.4363.50 1 0
+safari12.1 1 0
+chrome114.0.0.0 171 40
+msie7.0 2 0
+chrome35.0.1916.141 1 0
+firefox47.0 6 6
+chrome101.0.4951.54 2 0
+chrome107.0.0.0 9 9
+itunes 1 0
+chrome20.0.0000.00 2 0
+chrome92.0.4515.159 2 0
+wap 1 0
+chrome110.0.0.0 2 2
+chrome109.0.0.0 7 2
+nokia 2 0
+chrome99.0.4844.82 1 0
+chrome75.0.3770.143 2 0
+chrome64.0.3282.119 1 0
+chrome42.0.2311.90 1 1
+chrome101.0.4951.61 1 0
+firefox52.0 62 26
+chrome83.0.4103.61 4 4
+netscape5.0 2 2
+chrome10.0.613.0 1 0
+msie10.6 2 0
+chrome110.0.5478.0 60 4
+firefox38.0 1 0
+chrome92.0.4515.162 1 0
+firefox24.0 1 0
+msie9.0 1 1
+opera66.2.3445.62346 1 0
+chrome102.0.5005.40 1 0
+chrome108.0.0.0 17 17
+chrome101.0.4951.41 5 0
+chrome60.0.3112.107 2 0
+chrome49.0.2623.112 15 3
+opera12.14 1 0
+Unknown 13 12
+safari 4 1
+chrome4.0.207.0 1 0
+chrome76.0.3809.89 1 0
+chrome105.0.0.0 1 1
+firefox45.0 2 0
+chrome81.0.4044.92 1 0
+chrome76.0.3809.111 6 0
+opera85.0.4341.75 2 0
+msie10.0 1 0
+safari10.1 1 0
+firefox35.0 1 0
+chrome113.0.0.0 5 5
+chrome98.0.4758.141 1 0
+chrome79.0.3945.136 1 0
+chrome74.0.3729.157 1 0
+chrome101.0.4951.64 1 0
+chrome83.0.4103.97 11 11
+arora 2 0
+opera11.1010 1 0
+chrome103.0.0.0 1 1
+chrome52.0.2743.98 1 0
+chrome103.0.5060.134 38 4
+blackberry 1 0
+iphone 1 0
+chrome45.0.2454.84 1 0
+netscape4.0 1 0
+chrome98.0.4758.136 1 0
+msie11.0 1 0
+chrome92.0.4515.107 1 0
+chrome72.0.3626.105 1 0
+chrome99.0.4844.51 1 0
+chrome89.0.4389.90 1 1
+chrome71.0.3542.0 1 0
+safari8.0 1 0
+chrome99.0.0.0 38 4
+msie6.0 2 0
+chrome100.0.4896.60 2 2
+android 5 0
+safari15.0 1 0
+chrome74.0.3729.169 1 0
+chrome84.0.4147.89 1 0
+chrome114.0.5735.106 22 22
+mozilla 18 17
+chrome97.0.4692.71 1 0
+opera9.0 1 0
+chrome14.0.835.186 1 0
+netscape4.77 1 0
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 8
+Mozilla/5.0_researchscan.comsys.rwth-aachen.de 20230628224815
+nook_browser/1.0 20230614203116
+Mozilla/5.0_(compatible;_InternetMeasurement/1.0;__https://internet-measurement.com/) 20230630094029
+Python/3.8_aiohttp/3.8.4 20230614090715
+Expanse,_a_Palo_Alto_Networks_company,_searches_across_the_global_IPv4_space_multiple_times_per_day_to_identify_customers&#39;_presences_on_the_Internet._If_you_would_like_to_be_excluded_from_our_scans,_please_send_IP_addresses/domains_to:_scaninfo@paloaltonetworks.com 20230623104244
+Mozilla/5.0_(compatible;_CensysInspect/1.1;__https://about.censys.io/) 20230627233307
+POLARIS/6.01(BREW_3.1.5;U;en-us;LG;LX265;POLARIS/6.01/WAP;)MMP/2.0_profile/MIDP-201_Configuration_/CLDC-1.1 20230614203129
+Nokia7250/1.0_(3.14)_Profile/MIDP-1.0_Configuration/CLDC-1.0 20230614203142
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 3
+Python/3.8_aiohttp/3.8.4 20230614090715
+Expanse,_a_Palo_Alto_Networks_company,_searches_across_the_global_IPv4_space_multiple_times_per_day_to_identify_customers&#39;_presences_on_the_Internet._If_you_would_like_to_be_excluded_from_our_scans,_please_send_IP_addresses/domains_to:_scaninfo@paloaltonetworks.com 20230623104244
+nook_browser/1.0 20230614203116
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 144 294
+From1 0 0
+From2 0 0
+From3 32 90
+From4 23 220
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 11
+https://cpanel.ismaworld.com 9 35
+https://cpanel.ismaworld.com/cPanel_magic_revision_1616517441/unprotected/cpanel/fonts/open_sans/open_sans.min.css 6 6
+https://cpanel.ismaworld.com/cpsess8222351248/frontend/paper_lantern/filemanager/index.html 5 21
+https://cpanel.ismaworld.com/cPanel_magic_revision_1620209562/frontend/paper_lantern/_assets/css/master-ltr.cmb.min.css 4 4
+https://cpanel.ismaworld.com/cPanel_magic_revision_1616517441/frontend/paper_lantern/libraries/ui-fonts/open_sans/optimized/open_sans.min.css 2 2
+https://cpanel.ismaworld.com/cPanel_magic_revision_1615231936/frontend/paper_lantern/libraries/fontawesome/css/all.min.css 2 2
+https://www.wire-india.com/en/Home/Partners 2 2
+https://cpanel.ismaworld.com/cPanel_magic_revision_1612367464/frontend/paper_lantern/libraries/bootstrap/optimized/css/bootstrap.min.css 1 1
+http://cpanel.ismaworld.com 1 1
+https://cpanel.ismaworld.com/styled/current_style/styles.css 0 2
+https://cpanel.ismaworld.com/cPanel_magic_revision_1668579778/unprotected/cpanel/style_v2_optimized.css 0 14
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 3
+401 12 573
+405 9 7942084
+404 86 557214
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 36
+/photo-gallery 2 -
+/phpinfo 1 -
+/.env 14 -
+/src/notiflix.js 4 -
+/blog/.git/HEAD 1 -
+/wp-content/plugins/woocommerce-abandoned-cart/assets/css/view.abandoned.orders.style.css 1 -
+/blog/hello-isma 1 -
+/.git/index 1 -
+/event/.git/HEAD 1 -
+//cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js 4 -
+/images/sliders/img-6750b87bf8a865726a0ed36a69eba1f18556db625f7.jpg 1 -
+/ads.txt 1 -
+/blog/route('blog-details',%20$r->slug) 1 -
+/spring-world-calendar 1 -
+/event/$%7Bevent.slug%7D 2 -
+/blog/route('blog-details',%20$r-%3Eslug) 2 https://ismaworld.com/blog/ranjeet-testing
+/blogs/f/isma-goes-to-goa 1 -
+/blog/route( 2 -
+/core/.env 3 -
+/wp-content/wso112233.php 1 www.google.com
+/wp-plain.php 3 www.google.com
+/downloads 5 -
+/wp-admin/css/colors/coffee/index.php 1 -
+/site/js/%25url%25 2 -
+/sitemap.xml 3 -
+/wp-content/themes/hello-element/footer.php 4 www.google.com
+/sitemap.txt 2 -
+/.git/config 4 -
+/members-login 3 -
+/ingoapdw.php 1 www.google.com
+/wp-content/plugins/bookit/readme.txt 1 -
+/a 2 -
+//cdn.js 4 -
+/wp-content/themes/seotheme/db.php 3 www.google.com
+/wfiqpbbf.php 1 www.google.com
+/blogs/f/introducing-isma 2 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 116
+116.75.156.180 31 89 1341611 20230613021629
+34.78.60.219 27 63 276767 20230614090715
+202.179.91.48 5 44 692707 20230621232027
+23.229.104.2 5 5 17811 20230607181936
+143.244.190.138 4 4 14653 20230612155448
+49.36.193.196 4 38 986002 20230627214407
+193.176.87.82 4 38 985989 20230609070816
+183.136.225.44 3 3 128054 20230610202647
+40.94.88.92 3 37 980451 20230609071024
+137.226.113.44 2 2 12575 20230628224815
+54.78.105.166 2 2 9266 20230602201232
+34.249.236.162 2 2 9283 20230630120156
+167.94.138.124 2 2 18507 20230618130438
+164.90.146.59 2 2 5562 20230613042928
+138.229.108.29 2 30 242970 20230613122908
+183.136.225.46 2 2 90454 20230615012650
+143.244.189.206 2 2 7499 20230613013810
+38.154.5.26 2 30 242973 20230627122935
+106.75.184.188 1 7 94258 20230615043043
+165.227.238.36 1 1 2488 20230619111826
+87.236.176.73 1 1 6285 20230620223320
+161.35.132.79 1 1 2999 20230628195024
+54.88.179.33 1 1 45401 20230623221538
+159.89.114.116 1 1 6268 20230606055233
+143.110.218.47 1 1 6283 20230629065406
+134.122.44.184 1 1 2960 20230620092923
+35.90.122.144 1 1 6283 20230618032613
+68.183.81.6 1 1 6285 20230629033654
+167.71.94.81 1 1 6270 20230609063513
+198.235.24.85 1 1 45071 20230613023925
+167.94.138.52 1 1 6273 20230604191132
+5.75.254.100 1 1 6286 20230621160243
+165.232.185.54 1 1 6283 20230621073844
+165.227.41.117 1 1 6283 20230625194556
+164.92.202.52 1 1 6282 20230620042800
+137.184.189.106 1 1 3080 20230629023232
+52.13.110.126 1 1 6285 20230626031142
+34.222.238.182 1 1 6271 20230613025649
+87.236.176.68 1 1 12221 20230628044129
+165.232.97.210 1 1 4547 20230628235628
+34.222.236.139 1 1 6285 20230630031302
+52.11.172.111 1 1 6283 20230618032534
+87.236.176.173 1 1 6288 20230630094029
+191.102.148.101 1 1 2631 20230622172757
+134.209.103.17 1 1 6290 20230614190208
+3.101.26.124 1 16 96240 20230602124358
+93.159.230.87 1 1 6283 20230625221013
+35.171.144.152 1 1 45389 20230623221537
+205.210.31.206 1 1 45068 20230612203112
+83.145.36.70 1 1 0 20230601065806
+106.75.154.169 1 7 94261 20230615122507
+167.94.138.49 1 1 6286 20230618061557
+5.133.192.146 1 1 6285 20230624132144
+137.184.93.142 1 1 2898 20230620084110
+115.196.103.99 0 3 176442 
+18.236.184.230 1 1 6267 20230611024430
+161.35.65.21 1 1 6288 20230619075152
+137.184.189.81 1 1 2484 20230620063704
+165.22.68.224 1 1 2999 20230620123345
+142.93.251.190 1 1 6283 20230623071827
+146.185.201.249 1 1 6289 20230627155345
+161.35.136.40 1 1 6267 20230603061941
+198.235.24.162 1 1 45056 20230612211026
+128.140.37.38 1 1 2941 20230630234310
+164.90.147.49 1 1 2944 20230612172341
+138.197.163.83 1 1 6284 20230615063808
+198.235.24.247 1 1 45068 20230602172012
+34.216.205.71 1 1 6268 20230611024459
+134.122.103.247 1 1 2903 20230627011558
+34.219.44.32 1 1 6286 20230618032456
+52.89.103.18 1 1 6267 20230602025709
+198.235.24.180 1 1 45056 20230609082038
+205.210.31.150 1 1 45398 20230623104244
+198.235.24.94 1 1 45386 20230619221931
+104.248.61.219 1 1 6282 20230627070707
+206.189.119.23 1 1 2850 20230627131024
+142.54.161.124 1 1 6266 20230607065631
+161.35.30.212 1 1 6288 20230626112601
+213.232.122.238 1 1 6286 20230627155314
+161.35.35.161 1 1 2798 20230620090602
+137.184.223.118 1 1 6281 20230619072903
+167.248.133.190 1 1 6281 20230626235200
+198.235.24.78 1 1 45386 20230622140229
+159.223.121.57 1 1 6282 20230613070602
+35.167.209.81 1 1 6284 20230626031016
+167.71.12.89 1 1 2946 20230620064559
+147.182.154.176 1 1 6284 20230617061003
+101.68.211.2 1 1 45056 20230607170614
+149.248.0.133 0 2 126234 
+167.248.133.186 1 1 12220 20230607115657
+106.75.138.76 1 1 37949 20230615160957
+198.235.24.224 1 1 45386 20230616134134
+167.248.133.191 1 1 6289 20230619204154
+161.35.68.120 1 1 4541 20230620051035
+164.92.202.75 1 1 6287 20230630143330
+205.210.31.241 1 1 45398 20230619165131
+167.94.138.126 1 1 6289 20230625051322
+134.122.14.233 1 1 6285 20230625070842
+205.210.31.66 1 1 45401 20230616055712
+40.94.88.21 1 1 5537 20230609071021
+64.226.96.152 1 1 6269 20230611071956
+87.236.176.29 1 1 6283 20230625182832
+167.94.138.35 1 1 6270 20230602205548
+104.131.162.245 1 1 3078 20230620210923
+162.142.125.216 1 1 6283 20230620173054
+174.138.60.28 1 1 4546 20230619111413
+3.15.166.53 1 19 93584 20230603205642
+137.184.189.110 1 1 6283 20230619110206
+35.88.70.177 1 1 6266 20230602025642
+167.248.133.50 1 1 6287 20230627233307
+89.207.131.169 0 64 339177 
+134.122.44.126 1 1 6291 20230619105531
+87.236.176.6 1 1 12227 20230626090419
+77.74.177.119 1 1 6268 20230611124711
+166.70.59.90 1 1 45056 20230606111043
+167.248.133.37 1 1 6270 20230601202352
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 30
+20230601 2 2 6270 2
+20230602 7 22 169377 6
+20230603 2 20 99851 2
+20230604 1 1 6273 1
+20230605 1 1 45056 1
+20230606 2 2 51324 2
+20230607 9 9 93572 5
+20230608 0 3 176442 0
+20230609 11 79 2068371 6
+20230610 2 2 82998 1
+20230611 4 4 25072 4
+20230612 36 84 1335696 7
+20230613 11 49 427291 7
+20230614 29 129 628520 3
+20230615 5 17 278138 5
+20230616 2 2 90787 2
+20230617 1 1 6284 1
+20230618 5 5 31426 5
+20230619 9 9 129250 9
+20230620 11 11 43554 11
+20230621 7 46 705276 3
+20230622 2 2 48017 2
+20230623 4 4 142471 4
+20230624 1 1 6285 1
+20230625 5 6 80639 5
+20230626 5 5 37365 5
+20230627 12 75 1336890 8
+20230628 4 4 26056 4
+20230629 3 3 15648 3
+20230630 6 6 31084 5
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 4
+1h+ 1
+30s-2mn 2
+2mn-5mn 1
+0s-30s 116
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 40
+/ 97 1517720 94 86
+/blogs 9 24962 5 4
+/contact-us 7 20154 3 3
+/about-us 7 20996 2 4
+/site/fontawesome/webfonts/fa-brands-400.woff2 6 447942 0 3
+/register 6 27266 4 4
+/events 5 14723 3 3
+/cpsess8222351248/json-api/cpanel 5 6702 0 1
+/committee-members 5 12433 3 3
+/login 5 14239 1 1
+/board 5 15391 3 3
+/presidents-message 4 11191 1 2
+/site/fonts/dripicons-v2.woff 3 77961 1 0
+/site/fontawesome/webfonts/fa-light-300.woff2 3 494187 0 2
+/forget-password 2 5716 0 0
+/blog/test-blog 2 7166 0 0
+/blog/ranjeet-testing 2 6632 0 0
+/cPanel_magic_revision_1616517441/unprotected/cpanel/fonts/open_sans/OpenSans-Bold-webfont.woff 2 44590 0 0
+/cPanel_magic_revision_1616517441/unprotected/cpanel/fonts/open_sans/OpenSans-Semibold-webfont.woff 2 45552 0 0
+/cPanel_magic_revision_1616517441/unprotected/cpanel/fonts/open_sans/OpenSans-Regular-webfont.woff 2 45042 0 1
+/cPanel_magic_revision_1620209562/frontend/paper_lantern/libraries/ui-fonts/open_sans/optimized/OpenSans-Regular-webfont.woff 1 22521 0 0
+/cPanel_magic_revision_1620209562/frontend/paper_lantern/libraries/ui-fonts/open_sans/optimized/OpenSans-Semibold-webfont.woff 1 22776 0 0
+/site/fontawesome/webfonts/fa-solid-900.woff2 1 123137 0 0
+/cpsess8222351248/frontend/paper_lantern/filemanager/ 1 18501 0 0
+/cPanel_magic_revision_1620209562/frontend/paper_lantern/libraries/fontawesome/webfonts/fa-solid-900.woff2 1 75765 0 0
+/cpsess8222351248/execute/Personalization/get 1 100 0 0
+/cpsess8222351248/execute/SSL/installed_host 1 782 0 0
+/cPanel_magic_revision_1616517441/frontend/paper_lantern/libraries/ui-fonts/open_sans/optimized/OpenSans-Bold-webfont.woff 1 22295 0 0
+/login/ 1 109 0 0
+/cPanel_magic_revision_1620209562/frontend/paper_lantern/libraries/ui-fonts/open_sans/optimized/OpenSans-Bold-webfont.woff 1 22295 0 0
+/cPanel_magic_revision_1612367464/frontend/paper_lantern/libraries/bootstrap/optimized/fonts/glyphicons-halflings-regular.woff 1 23089 0 0
+/cPanel_magic_revision_1615231936/frontend/paper_lantern/libraries/fontawesome/webfonts/fa-solid-900.woff2 1 75707 0 0
+/cPanel_magic_revision_1616517441/frontend/paper_lantern/libraries/ui-fonts/open_sans/optimized/OpenSans-Regular-webfont.woff 1 22521 0 0
+/site/fontawesome/webfonts/fa-regular-400.woff2 1 151776 0 0
+/cpsess8222351248/execute/Themes/list 1 84 0 0
+/cpsess8222351248/execute/Resellers/list_accounts 1 116 0 0
+/cpsess8222351248/execute/Notifications/get_notifications_count 1 62 0 0
+/cPanel_magic_revision_1615231936/frontend/paper_lantern/libraries/fontawesome/webfonts/fa-regular-400.woff2 1 13565 0 0
+/cpsess8222351248/frontend/paper_lantern/ 1 33594 0 0
+/cpsess8222351248/execute/ResourceUsage/get_usages 1 768 0 0
+END_SIDER

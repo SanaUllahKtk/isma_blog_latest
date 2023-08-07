@@ -1,0 +1,1050 @@
+openapi: 3.0.3
+info:
+  title: dental-friend
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/v1/doctor/qualifications:
+    get:
+      summary: 'Qualification List'
+      description: "Get qualification list\n\nUse this endpoint to get qualification list"
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Basic APIs (Doctor)'
+      security: []
+  /api/v1/doctor/specializations:
+    get:
+      summary: 'Specialization List'
+      description: "Get specialization list\n\nUse this endpoint to get specialization list"
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Basic APIs (Doctor)'
+      security: []
+  /api/v1/doctor/document-types:
+    get:
+      summary: 'Document Type List'
+      description: "Get document type list\n\nUse this endpoint to get document type list"
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Basic APIs (Doctor)'
+      security: []
+  /api/v1/doctor/initial-update:
+    post:
+      summary: 'Initial Update'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Basic APIs (Doctor)'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Email of the doctor.'
+                  example: kk@gmail.com
+                name:
+                  type: string
+                  description: 'Name of the doctor.'
+                  example: 'Chetan Chadam'
+                address:
+                  type: string
+                  description: 'Address of the doctor.'
+                  example: '123, abc street, xyz city, 123456'
+                registration_no:
+                  type: string
+                  description: 'Registration number of the doctor.'
+                  example: '1234567890'
+                about:
+                  type: string
+                  description: 'nullable About the doctor.'
+                  example: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                city:
+                  type: string
+                  description: 'City of the doctor.'
+                  example: Mumbai
+                state:
+                  type: string
+                  description: 'State of the doctor.'
+                  example: Maharashtra
+                specializations:
+                  type: array
+                  description: 'Specializations of the doctor.'
+                  example:
+                    - 1
+                    - 2
+                    - 3
+                  items:
+                    type: string
+                document_types:
+                  type: array
+                  description: 'Document types of the doctor.'
+                  example:
+                    - 1
+                    - 2
+                    - 3
+                  items:
+                    type: string
+                documents:
+                  type: array
+                  description: 'Documents of the doctor.'
+                  example:
+                    - expedita
+                  items:
+                    type: string
+                experience:
+                  type: string
+                  description: 'Experience of the doctor.'
+                  example: '5'
+                image:
+                  type: nullable
+                  description: 'Image of the doctor.'
+                  example: file
+                qualifications:
+                  type: array
+                  description: 'Qualifications of the doctor.'
+                  example:
+                    - 1
+                    - 2
+                    - 3
+                  items:
+                    type: string
+              required:
+                - email
+                - name
+                - address
+                - registration_no
+                - city
+                - state
+                - specializations
+                - document_types
+                - documents
+                - experience
+                - qualifications
+      security: []
+  /api/v1/doctor:
+    get:
+      summary: 'Doctor Profile'
+      description: "Get doctor profile\n\nUse this endpoint to get doctor profile"
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Basic APIs (Doctor)'
+      security: []
+  /api/v1/doctor/clinics:
+    get:
+      summary: 'Clinic List'
+      description: "Get clinic list\n\nUse this endpoint to get clinic list"
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Basic APIs (Doctor)'
+      security: []
+    post:
+      summary: 'Store Clinic'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Basic APIs (Doctor)'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Name of the clinic.'
+                  example: 'Chetan Chadam dental clinic'
+                address:
+                  type: string
+                  description: 'Address of the clinic.'
+                  example: '123, abc street, xyz city, 123456'
+                latitude:
+                  type: string
+                  description: 'Latitude of the clinic.'
+                  example: '19.123456'
+                longitude:
+                  type: string
+                  description: 'Longitude of the clinic.'
+                  example: '72.123456'
+              required:
+                - name
+                - address
+                - latitude
+                - longitude
+      security: []
+  /api/v1/doctor/reviews:
+    get:
+      summary: 'Doctor Reviews'
+      description: "Get doctor review (paginated)\n\nUse this endpoint to get doctor review and rating*"
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Basic APIs (Doctor)'
+      security: []
+  /api/v1/doctor/update-status:
+    post:
+      summary: 'Doctor Availability'
+      description: "Get doctor availability\n\nUse this endpoint to change doctor availability"
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Basic APIs (Doctor)'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: ''
+                  example: 10
+                status:
+                  type: string
+                  description: 'Must be one of <code>available</code> or <code>offline</code>.'
+                  example: offline
+              required:
+                - id
+                - status
+      security: []
+  /api/v1/user/specializations:
+    get:
+      summary: 'Specializations List (paginated)'
+      description: 'This endpoint is used to get 30 specializations (Paginated)'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Basic APIs (User)'
+      security: []
+  /api/v1/user/doctor:
+    get:
+      summary: 'All Doctors (paginated)'
+      description: 'This endpoint is used to get 20 doctors'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Basic APIs (User)'
+      security: []
+  '/api/v1/user/doctor/specialization/{id}':
+    get:
+      summary: 'Doctors by Specialization'
+      description: 'This endpoint is used to get doctors by specialization id'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Basic APIs (User)'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The id of the specialization.'
+        example: '1'
+        required: true
+        schema:
+          type: string
+  '/api/v1/user/doctor/{id}':
+    get:
+      summary: "Doctor's Details"
+      description: 'This endpoint is used to get details of a doctor by id'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Basic APIs (User)'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The id of the doctor.'
+        example: '1'
+        required: true
+        schema:
+          type: string
+  /api/v1/user/doctor/toggle-like:
+    post:
+      summary: 'Toggle (Like/unlike) Doctor'
+      description: 'This endpoint is used to like/unlike a doctor'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Basic APIs (User)'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                doctor_id:
+                  type: integer
+                  description: 'The id of the doctor.'
+                  example: 1
+              required:
+                - doctor_id
+      security: []
+  /api/v1/doctor/login:
+    post:
+      summary: 'Doctor Login'
+      description: "Login or Signup using phone number || Login using Gmail\n\nUse this endpoint to login or signup using phone number or login using Gmail"
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Doctor Authentication'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                  description: 'The token received from firebase.'
+                  example: nesciunt
+                device_id:
+                  type: string
+                  description: 'The device id of the device.'
+                  example: natus
+              required:
+                - token
+                - device_id
+      security: []
+  /api/v1/user/call:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/user/call/initiate:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                doctor:
+                  type: integer
+                  description: ''
+                  example: 14
+                type:
+                  type: string
+                  description: 'Must be one of <code>call</code>, <code>video</code>, <code>instant_call</code>, or <code>instant_video</code>.'
+                  example: video
+              required:
+                - doctor
+                - type
+      security: []
+  /api/v1/doctor/slots:
+    get:
+      summary: 'Get Slots'
+      description: 'This endpoint is used to get doctor slots'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Schedule (Doctor)'
+      security: []
+    post:
+      summary: 'Store Slots'
+      description: 'This endpoint is used to store doctor Slots'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Schedule (Doctor)'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                start_time:
+                  type: string
+                  description: 'Start time of the slot.'
+                  example: '10:00'
+                end_time:
+                  type: string
+                  description: 'End time of the slot.'
+                  example: '11:00'
+                day:
+                  type: string
+                  description: 'Day of the slot.'
+                  example: Monday
+                is_visitable:
+                  type: boolean
+                  description: 'Is visitable.'
+                  example: true
+                doctor_clinic_id:
+                  type: integer
+                  description: 'Doctor clinic id.'
+                  example: 1
+              required:
+                - start_time
+                - end_time
+                - day
+                - is_visitable
+                - doctor_clinic_id
+      security: []
+  /api/v1/doctor/schedules:
+    get:
+      summary: 'Get Sessions'
+      description: 'This endpoint is used to get doctor sessions'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Schedule (Doctor)'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  description: 'Must be one of <code>call</code>, <code>video</code>, <code>instant_call</code>, or <code>instant_video</code>.'
+                  example: instant_call
+                for:
+                  type: string
+                  description: 'Must be one of <code>upcoming</code> or <code>previous</code>.'
+                  example: previous
+      security: []
+    parameters:
+      -
+        in: path
+        name: type
+        description: 'Optional parameter. nullable Type of the session.'
+        required: true
+        schema:
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: video/audio/instant_call/instant_video
+      -
+        in: path
+        name: for
+        description: 'Optional parameter. nullable .'
+        required: true
+        schema:
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: upcoming/previous
+  /api/v1/user/login:
+    post:
+      summary: 'User Login'
+      description: "Login or Signup using phone number || Login using Gmail\n\nUse this endpoint to login or signup using phone number or login using Gmail"
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'User Authentication'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                  description: 'The token received from firebase.'
+                  example: suscipit
+                device_id:
+                  type: string
+                  description: 'The device id of the device.'
+                  example: minima
+              required:
+                - token
+                - device_id
+      security: []
+  /api/v1/user:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'User Profile'
+      security: []
+  /api/v1/user/update:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'User Profile'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: culpa
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: nelda.ernser@example.com
+                gender:
+                  type: string
+                  description: ''
+                  example: ipsam
+                address:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: vawomlcoztkhvxkmztdcvpfvvpkoa
+              required:
+                - name
+                - email
+                - gender
+      security: []
+tags:
+  -
+    name: 'Basic APIs (Doctor)'
+    description: "\nAPIs for managing doctor"
+  -
+    name: 'Basic APIs (User)'
+    description: "\nBasic APIs for user"
+  -
+    name: 'Doctor Authentication'
+    description: "\nAPIs for managing doctor authentication"
+  -
+    name: Endpoints
+    description: ''
+  -
+    name: 'Schedule (Doctor)'
+    description: "\nAPIs for managing doctor"
+  -
+    name: 'User Authentication'
+    description: 'User Authentication/Registration'
+  -
+    name: 'User Profile'
+    description: "\nAPIs for managing user profile"

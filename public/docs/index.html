@@ -1,0 +1,2667 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>dental-friend Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .bash-example code { display: none; }
+                    body .content .javascript-example code { display: none; }
+            </style>
+
+
+    <script src="../docs/js/theme-default-4.0.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                    <ul id="tocify-header-introduction" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="introduction">
+                    <a href="#introduction">Introduction</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-authenticating-requests" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authenticating-requests">
+                    <a href="#authenticating-requests">Authenticating requests</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-basic-apis-doctor" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="basic-apis-doctor">
+                    <a href="#basic-apis-doctor">Basic APIs (Doctor)</a>
+                </li>
+                                    <ul id="tocify-subheader-basic-apis-doctor" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="basic-apis-doctor-GETapi-v1-doctor-qualifications">
+                                <a href="#basic-apis-doctor-GETapi-v1-doctor-qualifications">Qualification List</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="basic-apis-doctor-GETapi-v1-doctor-specializations">
+                                <a href="#basic-apis-doctor-GETapi-v1-doctor-specializations">Specialization List</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="basic-apis-doctor-GETapi-v1-doctor-document-types">
+                                <a href="#basic-apis-doctor-GETapi-v1-doctor-document-types">Document Type List</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="basic-apis-doctor-POSTapi-v1-doctor-initial-update">
+                                <a href="#basic-apis-doctor-POSTapi-v1-doctor-initial-update">Initial Update</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="basic-apis-doctor-GETapi-v1-doctor">
+                                <a href="#basic-apis-doctor-GETapi-v1-doctor">Doctor Profile</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="basic-apis-doctor-GETapi-v1-doctor-clinics">
+                                <a href="#basic-apis-doctor-GETapi-v1-doctor-clinics">Clinic List</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="basic-apis-doctor-GETapi-v1-doctor-reviews">
+                                <a href="#basic-apis-doctor-GETapi-v1-doctor-reviews">Doctor Reviews</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="basic-apis-doctor-POSTapi-v1-doctor-clinics">
+                                <a href="#basic-apis-doctor-POSTapi-v1-doctor-clinics">Store Clinic</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="basic-apis-doctor-POSTapi-v1-doctor-update-status">
+                                <a href="#basic-apis-doctor-POSTapi-v1-doctor-update-status">Doctor Availability</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-basic-apis-user" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="basic-apis-user">
+                    <a href="#basic-apis-user">Basic APIs (User)</a>
+                </li>
+                                    <ul id="tocify-subheader-basic-apis-user" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="basic-apis-user-GETapi-v1-user-specializations">
+                                <a href="#basic-apis-user-GETapi-v1-user-specializations">Specializations List (paginated)</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="basic-apis-user-GETapi-v1-user-doctor">
+                                <a href="#basic-apis-user-GETapi-v1-user-doctor">All Doctors (paginated)</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="basic-apis-user-GETapi-v1-user-doctor-specialization--id-">
+                                <a href="#basic-apis-user-GETapi-v1-user-doctor-specialization--id-">Doctors by Specialization</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="basic-apis-user-GETapi-v1-user-doctor--id-">
+                                <a href="#basic-apis-user-GETapi-v1-user-doctor--id-">Doctor's Details</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="basic-apis-user-POSTapi-v1-user-doctor-toggle-like">
+                                <a href="#basic-apis-user-POSTapi-v1-user-doctor-toggle-like">Toggle (Like/unlike) Doctor</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-doctor-authentication" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="doctor-authentication">
+                    <a href="#doctor-authentication">Doctor Authentication</a>
+                </li>
+                                    <ul id="tocify-subheader-doctor-authentication" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="doctor-authentication-POSTapi-v1-doctor-login">
+                                <a href="#doctor-authentication-POSTapi-v1-doctor-login">Doctor Login</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-endpoints" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-user-call">
+                                <a href="#endpoints-GETapi-v1-user-call">GET api/v1/user/call</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-user-call-initiate">
+                                <a href="#endpoints-POSTapi-v1-user-call-initiate">POST api/v1/user/call/initiate</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-schedule-doctor" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="schedule-doctor">
+                    <a href="#schedule-doctor">Schedule (Doctor)</a>
+                </li>
+                                    <ul id="tocify-subheader-schedule-doctor" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="schedule-doctor-GETapi-v1-doctor-slots">
+                                <a href="#schedule-doctor-GETapi-v1-doctor-slots">Get Slots</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="schedule-doctor-POSTapi-v1-doctor-slots">
+                                <a href="#schedule-doctor-POSTapi-v1-doctor-slots">Store Slots</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="schedule-doctor-GETapi-v1-doctor-schedules">
+                                <a href="#schedule-doctor-GETapi-v1-doctor-schedules">Get Sessions</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-user-authentication" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="user-authentication">
+                    <a href="#user-authentication">User Authentication</a>
+                </li>
+                                    <ul id="tocify-subheader-user-authentication" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="user-authentication-POSTapi-v1-user-login">
+                                <a href="#user-authentication-POSTapi-v1-user-login">User Login</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-user-profile" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="user-profile">
+                    <a href="#user-profile">User Profile</a>
+                </li>
+                                    <ul id="tocify-subheader-user-profile" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="user-profile-GETapi-v1-user">
+                                <a href="#user-profile-GETapi-v1-user">GET api/v1/user</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="user-profile-POSTapi-v1-user-update">
+                                <a href="#user-profile-POSTapi-v1-user-update">POST api/v1/user/update</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+            </div>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+        <ul class="toc-footer" id="last-updated">
+        <li>Last updated: October 11 2022</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://localhost</code></pre>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="basic-apis-doctor">Basic APIs (Doctor)</h1>
+
+    <p>APIs for managing doctor</p>
+
+                                <h2 id="basic-apis-doctor-GETapi-v1-doctor-qualifications">Qualification List</h2>
+
+<p>
+</p>
+
+<p>Get qualification list</p>
+<p>Use this endpoint to get qualification list</p>
+
+<span id="example-requests-GETapi-v1-doctor-qualifications">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/doctor/qualifications" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/doctor/qualifications"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-doctor-qualifications">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-doctor-qualifications" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-doctor-qualifications"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-doctor-qualifications"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-doctor-qualifications" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-doctor-qualifications"></code></pre>
+</span>
+<form id="form-GETapi-v1-doctor-qualifications" data-method="GET"
+      data-path="api/v1/doctor/qualifications"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-doctor-qualifications', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/doctor/qualifications</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="basic-apis-doctor-GETapi-v1-doctor-specializations">Specialization List</h2>
+
+<p>
+</p>
+
+<p>Get specialization list</p>
+<p>Use this endpoint to get specialization list</p>
+
+<span id="example-requests-GETapi-v1-doctor-specializations">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/doctor/specializations" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/doctor/specializations"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-doctor-specializations">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-doctor-specializations" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-doctor-specializations"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-doctor-specializations"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-doctor-specializations" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-doctor-specializations"></code></pre>
+</span>
+<form id="form-GETapi-v1-doctor-specializations" data-method="GET"
+      data-path="api/v1/doctor/specializations"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-doctor-specializations', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/doctor/specializations</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="basic-apis-doctor-GETapi-v1-doctor-document-types">Document Type List</h2>
+
+<p>
+</p>
+
+<p>Get document type list</p>
+<p>Use this endpoint to get document type list</p>
+
+<span id="example-requests-GETapi-v1-doctor-document-types">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/doctor/document-types" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/doctor/document-types"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-doctor-document-types">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-doctor-document-types" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-doctor-document-types"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-doctor-document-types"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-doctor-document-types" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-doctor-document-types"></code></pre>
+</span>
+<form id="form-GETapi-v1-doctor-document-types" data-method="GET"
+      data-path="api/v1/doctor/document-types"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-doctor-document-types', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/doctor/document-types</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="basic-apis-doctor-POSTapi-v1-doctor-initial-update">Initial Update</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-doctor-initial-update">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/doctor/initial-update" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"kk@gmail.com\",
+    \"name\": \"Chetan Chadam\",
+    \"address\": \"123, abc street, xyz city, 123456\",
+    \"registration_no\": \"1234567890\",
+    \"about\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\",
+    \"city\": \"Mumbai\",
+    \"state\": \"Maharashtra\",
+    \"specializations\": [
+        1,
+        2,
+        3
+    ],
+    \"document_types\": [
+        1,
+        2,
+        3
+    ],
+    \"documents\": [
+        \"expedita\"
+    ],
+    \"experience\": \"5\",
+    \"image\": \"file\",
+    \"qualifications\": [
+        1,
+        2,
+        3
+    ]
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/doctor/initial-update"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "kk@gmail.com",
+    "name": "Chetan Chadam",
+    "address": "123, abc street, xyz city, 123456",
+    "registration_no": "1234567890",
+    "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "specializations": [
+        1,
+        2,
+        3
+    ],
+    "document_types": [
+        1,
+        2,
+        3
+    ],
+    "documents": [
+        "expedita"
+    ],
+    "experience": "5",
+    "image": "file",
+    "qualifications": [
+        1,
+        2,
+        3
+    ]
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-doctor-initial-update">
+</span>
+<span id="execution-results-POSTapi-v1-doctor-initial-update" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-doctor-initial-update"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-doctor-initial-update"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-doctor-initial-update" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-doctor-initial-update"></code></pre>
+</span>
+<form id="form-POSTapi-v1-doctor-initial-update" data-method="POST"
+      data-path="api/v1/doctor/initial-update"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-doctor-initial-update', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/doctor/initial-update</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               value="kk@gmail.com"
+               data-component="body" hidden>
+    <br>
+<p>Email of the doctor.</p>
+        </p>
+                <p>
+            <b><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               value="Chetan Chadam"
+               data-component="body" hidden>
+    <br>
+<p>Name of the doctor.</p>
+        </p>
+                <p>
+            <b><code>address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="address"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               value="123, abc street, xyz city, 123456"
+               data-component="body" hidden>
+    <br>
+<p>Address of the doctor.</p>
+        </p>
+                <p>
+            <b><code>registration_no</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="registration_no"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               value="1234567890"
+               data-component="body" hidden>
+    <br>
+<p>Registration number of the doctor.</p>
+        </p>
+                <p>
+            <b><code>about</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="about"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+               data-component="body" hidden>
+    <br>
+<p>nullable About the doctor.</p>
+        </p>
+                <p>
+            <b><code>city</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="city"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               value="Mumbai"
+               data-component="body" hidden>
+    <br>
+<p>City of the doctor.</p>
+        </p>
+                <p>
+            <b><code>state</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="state"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               value="Maharashtra"
+               data-component="body" hidden>
+    <br>
+<p>State of the doctor.</p>
+        </p>
+                <p>
+            <b><code>specializations</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="specializations[0]"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               data-component="body" hidden>
+        <input type="text"
+               name="specializations[1]"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               data-component="body" hidden>
+    <br>
+<p>Specializations of the doctor.</p>
+        </p>
+                <p>
+            <b><code>document_types</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="document_types[0]"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               data-component="body" hidden>
+        <input type="text"
+               name="document_types[1]"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               data-component="body" hidden>
+    <br>
+<p>Document types of the doctor.</p>
+        </p>
+                <p>
+            <b><code>documents</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="documents[0]"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               data-component="body" hidden>
+        <input type="text"
+               name="documents[1]"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               data-component="body" hidden>
+    <br>
+<p>Documents of the doctor.</p>
+        </p>
+                <p>
+            <b><code>experience</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="experience"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               value="5"
+               data-component="body" hidden>
+    <br>
+<p>Experience of the doctor.</p>
+        </p>
+                <p>
+            <b><code>image</code></b>&nbsp;&nbsp;
+<small>nullable</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="image"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               value="file"
+               data-component="body" hidden>
+    <br>
+<p>Image of the doctor.</p>
+        </p>
+                <p>
+            <b><code>qualifications</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="qualifications[0]"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               data-component="body" hidden>
+        <input type="text"
+               name="qualifications[1]"
+               data-endpoint="POSTapi-v1-doctor-initial-update"
+               data-component="body" hidden>
+    <br>
+<p>Qualifications of the doctor.</p>
+        </p>
+        </form>
+
+                    <h2 id="basic-apis-doctor-GETapi-v1-doctor">Doctor Profile</h2>
+
+<p>
+</p>
+
+<p>Get doctor profile</p>
+<p>Use this endpoint to get doctor profile</p>
+
+<span id="example-requests-GETapi-v1-doctor">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/doctor" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/doctor"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-doctor">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-doctor" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-doctor"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-doctor"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-doctor" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-doctor"></code></pre>
+</span>
+<form id="form-GETapi-v1-doctor" data-method="GET"
+      data-path="api/v1/doctor"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-doctor', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/doctor</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="basic-apis-doctor-GETapi-v1-doctor-clinics">Clinic List</h2>
+
+<p>
+</p>
+
+<p>Get clinic list</p>
+<p>Use this endpoint to get clinic list</p>
+
+<span id="example-requests-GETapi-v1-doctor-clinics">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/doctor/clinics" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/doctor/clinics"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-doctor-clinics">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-doctor-clinics" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-doctor-clinics"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-doctor-clinics"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-doctor-clinics" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-doctor-clinics"></code></pre>
+</span>
+<form id="form-GETapi-v1-doctor-clinics" data-method="GET"
+      data-path="api/v1/doctor/clinics"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-doctor-clinics', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/doctor/clinics</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="basic-apis-doctor-GETapi-v1-doctor-reviews">Doctor Reviews</h2>
+
+<p>
+</p>
+
+<p>Get doctor review (paginated)</p>
+<p>Use this endpoint to get doctor review and rating*</p>
+
+<span id="example-requests-GETapi-v1-doctor-reviews">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/doctor/reviews" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/doctor/reviews"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-doctor-reviews">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-doctor-reviews" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-doctor-reviews"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-doctor-reviews"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-doctor-reviews" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-doctor-reviews"></code></pre>
+</span>
+<form id="form-GETapi-v1-doctor-reviews" data-method="GET"
+      data-path="api/v1/doctor/reviews"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-doctor-reviews', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/doctor/reviews</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="basic-apis-doctor-POSTapi-v1-doctor-clinics">Store Clinic</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-doctor-clinics">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/doctor/clinics" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"Chetan Chadam dental clinic\",
+    \"address\": \"123, abc street, xyz city, 123456\",
+    \"latitude\": \"19.123456\",
+    \"longitude\": \"72.123456\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/doctor/clinics"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "Chetan Chadam dental clinic",
+    "address": "123, abc street, xyz city, 123456",
+    "latitude": "19.123456",
+    "longitude": "72.123456"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-doctor-clinics">
+</span>
+<span id="execution-results-POSTapi-v1-doctor-clinics" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-doctor-clinics"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-doctor-clinics"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-doctor-clinics" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-doctor-clinics"></code></pre>
+</span>
+<form id="form-POSTapi-v1-doctor-clinics" data-method="POST"
+      data-path="api/v1/doctor/clinics"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-doctor-clinics', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/doctor/clinics</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="POSTapi-v1-doctor-clinics"
+               value="Chetan Chadam dental clinic"
+               data-component="body" hidden>
+    <br>
+<p>Name of the clinic.</p>
+        </p>
+                <p>
+            <b><code>address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="address"
+               data-endpoint="POSTapi-v1-doctor-clinics"
+               value="123, abc street, xyz city, 123456"
+               data-component="body" hidden>
+    <br>
+<p>Address of the clinic.</p>
+        </p>
+                <p>
+            <b><code>latitude</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="latitude"
+               data-endpoint="POSTapi-v1-doctor-clinics"
+               value="19.123456"
+               data-component="body" hidden>
+    <br>
+<p>Latitude of the clinic.</p>
+        </p>
+                <p>
+            <b><code>longitude</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="longitude"
+               data-endpoint="POSTapi-v1-doctor-clinics"
+               value="72.123456"
+               data-component="body" hidden>
+    <br>
+<p>Longitude of the clinic.</p>
+        </p>
+        </form>
+
+                    <h2 id="basic-apis-doctor-POSTapi-v1-doctor-update-status">Doctor Availability</h2>
+
+<p>
+</p>
+
+<p>Get doctor availability</p>
+<p>Use this endpoint to change doctor availability</p>
+
+<span id="example-requests-POSTapi-v1-doctor-update-status">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/doctor/update-status" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"id\": 10,
+    \"status\": \"offline\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/doctor/update-status"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": 10,
+    "status": "offline"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-doctor-update-status">
+</span>
+<span id="execution-results-POSTapi-v1-doctor-update-status" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-doctor-update-status"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-doctor-update-status"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-doctor-update-status" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-doctor-update-status"></code></pre>
+</span>
+<form id="form-POSTapi-v1-doctor-update-status" data-method="POST"
+      data-path="api/v1/doctor/update-status"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-doctor-update-status', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/doctor/update-status</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="POSTapi-v1-doctor-update-status"
+               value="10"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="status"
+               data-endpoint="POSTapi-v1-doctor-update-status"
+               value="offline"
+               data-component="body" hidden>
+    <br>
+<p>Must be one of <code>available</code> or <code>offline</code>.</p>
+        </p>
+        </form>
+
+                <h1 id="basic-apis-user">Basic APIs (User)</h1>
+
+    <p>Basic APIs for user</p>
+
+                                <h2 id="basic-apis-user-GETapi-v1-user-specializations">Specializations List (paginated)</h2>
+
+<p>
+</p>
+
+<p>This endpoint is used to get 30 specializations (Paginated)</p>
+
+<span id="example-requests-GETapi-v1-user-specializations">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/user/specializations" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/user/specializations"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-user-specializations">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-user-specializations" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-user-specializations"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-user-specializations"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-user-specializations" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-user-specializations"></code></pre>
+</span>
+<form id="form-GETapi-v1-user-specializations" data-method="GET"
+      data-path="api/v1/user/specializations"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-user-specializations', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/user/specializations</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="basic-apis-user-GETapi-v1-user-doctor">All Doctors (paginated)</h2>
+
+<p>
+</p>
+
+<p>This endpoint is used to get 20 doctors</p>
+
+<span id="example-requests-GETapi-v1-user-doctor">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/user/doctor" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/user/doctor"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-user-doctor">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-user-doctor" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-user-doctor"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-user-doctor"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-user-doctor" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-user-doctor"></code></pre>
+</span>
+<form id="form-GETapi-v1-user-doctor" data-method="GET"
+      data-path="api/v1/user/doctor"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-user-doctor', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/user/doctor</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="basic-apis-user-GETapi-v1-user-doctor-specialization--id-">Doctors by Specialization</h2>
+
+<p>
+</p>
+
+<p>This endpoint is used to get doctors by specialization id</p>
+
+<span id="example-requests-GETapi-v1-user-doctor-specialization--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/user/doctor/specialization/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/user/doctor/specialization/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-user-doctor-specialization--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-user-doctor-specialization--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-user-doctor-specialization--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-user-doctor-specialization--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-user-doctor-specialization--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-user-doctor-specialization--id-"></code></pre>
+</span>
+<form id="form-GETapi-v1-user-doctor-specialization--id-" data-method="GET"
+      data-path="api/v1/user/doctor/specialization/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-user-doctor-specialization--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/user/doctor/specialization/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="id"
+               data-endpoint="GETapi-v1-user-doctor-specialization--id-"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The id of the specialization.</p>
+            </p>
+                    </form>
+
+                    <h2 id="basic-apis-user-GETapi-v1-user-doctor--id-">Doctor&#039;s Details</h2>
+
+<p>
+</p>
+
+<p>This endpoint is used to get details of a doctor by id</p>
+
+<span id="example-requests-GETapi-v1-user-doctor--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/user/doctor/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/user/doctor/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-user-doctor--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-user-doctor--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-user-doctor--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-user-doctor--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-user-doctor--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-user-doctor--id-"></code></pre>
+</span>
+<form id="form-GETapi-v1-user-doctor--id-" data-method="GET"
+      data-path="api/v1/user/doctor/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-user-doctor--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/user/doctor/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="id"
+               data-endpoint="GETapi-v1-user-doctor--id-"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The id of the doctor.</p>
+            </p>
+                    </form>
+
+                    <h2 id="basic-apis-user-POSTapi-v1-user-doctor-toggle-like">Toggle (Like/unlike) Doctor</h2>
+
+<p>
+</p>
+
+<p>This endpoint is used to like/unlike a doctor</p>
+
+<span id="example-requests-POSTapi-v1-user-doctor-toggle-like">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/user/doctor/toggle-like" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"doctor_id\": 1
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/user/doctor/toggle-like"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "doctor_id": 1
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-user-doctor-toggle-like">
+</span>
+<span id="execution-results-POSTapi-v1-user-doctor-toggle-like" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-user-doctor-toggle-like"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-user-doctor-toggle-like"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-user-doctor-toggle-like" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-user-doctor-toggle-like"></code></pre>
+</span>
+<form id="form-POSTapi-v1-user-doctor-toggle-like" data-method="POST"
+      data-path="api/v1/user/doctor/toggle-like"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-user-doctor-toggle-like', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/user/doctor/toggle-like</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>doctor_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number"
+               name="doctor_id"
+               data-endpoint="POSTapi-v1-user-doctor-toggle-like"
+               value="1"
+               data-component="body" hidden>
+    <br>
+<p>The id of the doctor.</p>
+        </p>
+        </form>
+
+                <h1 id="doctor-authentication">Doctor Authentication</h1>
+
+    <p>APIs for managing doctor authentication</p>
+
+                                <h2 id="doctor-authentication-POSTapi-v1-doctor-login">Doctor Login</h2>
+
+<p>
+</p>
+
+<p>Login or Signup using phone number || Login using Gmail</p>
+<p>Use this endpoint to login or signup using phone number or login using Gmail</p>
+
+<span id="example-requests-POSTapi-v1-doctor-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/doctor/login" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"token\": \"nesciunt\",
+    \"device_id\": \"natus\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/doctor/login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "token": "nesciunt",
+    "device_id": "natus"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-doctor-login">
+</span>
+<span id="execution-results-POSTapi-v1-doctor-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-doctor-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-doctor-login"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-doctor-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-doctor-login"></code></pre>
+</span>
+<form id="form-POSTapi-v1-doctor-login" data-method="POST"
+      data-path="api/v1/doctor/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-doctor-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/doctor/login</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>token</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="token"
+               data-endpoint="POSTapi-v1-doctor-login"
+               value="nesciunt"
+               data-component="body" hidden>
+    <br>
+<p>The token received from firebase.</p>
+        </p>
+                <p>
+            <b><code>device_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="device_id"
+               data-endpoint="POSTapi-v1-doctor-login"
+               value="natus"
+               data-component="body" hidden>
+    <br>
+<p>The device id of the device.</p>
+        </p>
+        </form>
+
+                <h1 id="endpoints">Endpoints</h1>
+
+    
+
+                                <h2 id="endpoints-GETapi-v1-user-call">GET api/v1/user/call</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-user-call">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/user/call" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/user/call"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-user-call">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-user-call" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-user-call"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-user-call"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-user-call" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-user-call"></code></pre>
+</span>
+<form id="form-GETapi-v1-user-call" data-method="GET"
+      data-path="api/v1/user/call"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-user-call', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/user/call</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="endpoints-POSTapi-v1-user-call-initiate">POST api/v1/user/call/initiate</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-user-call-initiate">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/user/call/initiate" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"doctor\": 14,
+    \"type\": \"video\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/user/call/initiate"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "doctor": 14,
+    "type": "video"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-user-call-initiate">
+</span>
+<span id="execution-results-POSTapi-v1-user-call-initiate" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-user-call-initiate"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-user-call-initiate"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-user-call-initiate" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-user-call-initiate"></code></pre>
+</span>
+<form id="form-POSTapi-v1-user-call-initiate" data-method="POST"
+      data-path="api/v1/user/call/initiate"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-user-call-initiate', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/user/call/initiate</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>doctor</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number"
+               name="doctor"
+               data-endpoint="POSTapi-v1-user-call-initiate"
+               value="14"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="type"
+               data-endpoint="POSTapi-v1-user-call-initiate"
+               value="video"
+               data-component="body" hidden>
+    <br>
+<p>Must be one of <code>call</code>, <code>video</code>, <code>instant_call</code>, or <code>instant_video</code>.</p>
+        </p>
+        </form>
+
+                <h1 id="schedule-doctor">Schedule (Doctor)</h1>
+
+    <p>APIs for managing doctor</p>
+
+                                <h2 id="schedule-doctor-GETapi-v1-doctor-slots">Get Slots</h2>
+
+<p>
+</p>
+
+<p>This endpoint is used to get doctor slots</p>
+
+<span id="example-requests-GETapi-v1-doctor-slots">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/doctor/slots" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/doctor/slots"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-doctor-slots">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-doctor-slots" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-doctor-slots"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-doctor-slots"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-doctor-slots" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-doctor-slots"></code></pre>
+</span>
+<form id="form-GETapi-v1-doctor-slots" data-method="GET"
+      data-path="api/v1/doctor/slots"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-doctor-slots', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/doctor/slots</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="schedule-doctor-POSTapi-v1-doctor-slots">Store Slots</h2>
+
+<p>
+</p>
+
+<p>This endpoint is used to store doctor Slots</p>
+
+<span id="example-requests-POSTapi-v1-doctor-slots">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/doctor/slots" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"start_time\": \"10:00\",
+    \"end_time\": \"11:00\",
+    \"day\": \"Monday\",
+    \"is_visitable\": true,
+    \"doctor_clinic_id\": 1
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/doctor/slots"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "start_time": "10:00",
+    "end_time": "11:00",
+    "day": "Monday",
+    "is_visitable": true,
+    "doctor_clinic_id": 1
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-doctor-slots">
+</span>
+<span id="execution-results-POSTapi-v1-doctor-slots" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-doctor-slots"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-doctor-slots"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-doctor-slots" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-doctor-slots"></code></pre>
+</span>
+<form id="form-POSTapi-v1-doctor-slots" data-method="POST"
+      data-path="api/v1/doctor/slots"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-doctor-slots', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/doctor/slots</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>start_time</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="start_time"
+               data-endpoint="POSTapi-v1-doctor-slots"
+               value="10:00"
+               data-component="body" hidden>
+    <br>
+<p>Start time of the slot.</p>
+        </p>
+                <p>
+            <b><code>end_time</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="end_time"
+               data-endpoint="POSTapi-v1-doctor-slots"
+               value="11:00"
+               data-component="body" hidden>
+    <br>
+<p>End time of the slot.</p>
+        </p>
+                <p>
+            <b><code>day</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="day"
+               data-endpoint="POSTapi-v1-doctor-slots"
+               value="Monday"
+               data-component="body" hidden>
+    <br>
+<p>Day of the slot.</p>
+        </p>
+                <p>
+            <b><code>is_visitable</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+ &nbsp;
+                <label data-endpoint="POSTapi-v1-doctor-slots" hidden>
+            <input type="radio" name="is_visitable"
+                   value="true"
+                   data-endpoint="POSTapi-v1-doctor-slots"
+                   data-component="body"
+            >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-v1-doctor-slots" hidden>
+            <input type="radio" name="is_visitable"
+                   value="false"
+                   data-endpoint="POSTapi-v1-doctor-slots"
+                   data-component="body"
+            >
+            <code>false</code>
+        </label>
+    <br>
+<p>Is visitable.</p>
+        </p>
+                <p>
+            <b><code>doctor_clinic_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number"
+               name="doctor_clinic_id"
+               data-endpoint="POSTapi-v1-doctor-slots"
+               value="1"
+               data-component="body" hidden>
+    <br>
+<p>Doctor clinic id.</p>
+        </p>
+        </form>
+
+                    <h2 id="schedule-doctor-GETapi-v1-doctor-schedules">Get Sessions</h2>
+
+<p>
+</p>
+
+<p>This endpoint is used to get doctor sessions</p>
+
+<span id="example-requests-GETapi-v1-doctor-schedules">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/doctor/schedules" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"type\": \"instant_call\",
+    \"for\": \"previous\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/doctor/schedules"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "type": "instant_call",
+    "for": "previous"
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-doctor-schedules">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-doctor-schedules" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-doctor-schedules"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-doctor-schedules"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-doctor-schedules" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-doctor-schedules"></code></pre>
+</span>
+<form id="form-GETapi-v1-doctor-schedules" data-method="GET"
+      data-path="api/v1/doctor/schedules"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-doctor-schedules', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/doctor/schedules</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="type"
+               data-endpoint="GETapi-v1-doctor-schedules"
+               value="video/audio/instant_call/instant_video"
+               data-component="url" hidden>
+    <br>
+<p>nullable Type of the session.</p>
+            </p>
+                    <p>
+                <b><code>for</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="for"
+               data-endpoint="GETapi-v1-doctor-schedules"
+               value="upcoming/previous"
+               data-component="url" hidden>
+    <br>
+<p>nullable .</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="type"
+               data-endpoint="GETapi-v1-doctor-schedules"
+               value="instant_call"
+               data-component="body" hidden>
+    <br>
+<p>Must be one of <code>call</code>, <code>video</code>, <code>instant_call</code>, or <code>instant_video</code>.</p>
+        </p>
+                <p>
+            <b><code>for</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="for"
+               data-endpoint="GETapi-v1-doctor-schedules"
+               value="previous"
+               data-component="body" hidden>
+    <br>
+<p>Must be one of <code>upcoming</code> or <code>previous</code>.</p>
+        </p>
+        </form>
+
+                <h1 id="user-authentication">User Authentication</h1>
+
+    <p>User Authentication/Registration</p>
+
+                                <h2 id="user-authentication-POSTapi-v1-user-login">User Login</h2>
+
+<p>
+</p>
+
+<p>Login or Signup using phone number || Login using Gmail</p>
+<p>Use this endpoint to login or signup using phone number or login using Gmail</p>
+
+<span id="example-requests-POSTapi-v1-user-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/user/login" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"token\": \"suscipit\",
+    \"device_id\": \"minima\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/user/login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "token": "suscipit",
+    "device_id": "minima"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-user-login">
+</span>
+<span id="execution-results-POSTapi-v1-user-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-user-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-user-login"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-user-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-user-login"></code></pre>
+</span>
+<form id="form-POSTapi-v1-user-login" data-method="POST"
+      data-path="api/v1/user/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-user-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/user/login</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>token</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="token"
+               data-endpoint="POSTapi-v1-user-login"
+               value="suscipit"
+               data-component="body" hidden>
+    <br>
+<p>The token received from firebase.</p>
+        </p>
+                <p>
+            <b><code>device_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="device_id"
+               data-endpoint="POSTapi-v1-user-login"
+               value="minima"
+               data-component="body" hidden>
+    <br>
+<p>The device id of the device.</p>
+        </p>
+        </form>
+
+                <h1 id="user-profile">User Profile</h1>
+
+    <p>APIs for managing user profile</p>
+
+                                <h2 id="user-profile-GETapi-v1-user">GET api/v1/user</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-user">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/user" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/user"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-user">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-user" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-user"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-user"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-user"></code></pre>
+</span>
+<form id="form-GETapi-v1-user" data-method="GET"
+      data-path="api/v1/user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-user', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/user</code></b>
+        </p>
+                    </form>
+
+                    <h2 id="user-profile-POSTapi-v1-user-update">POST api/v1/user/update</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-user-update">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/user/update" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"culpa\",
+    \"email\": \"nelda.ernser@example.com\",
+    \"gender\": \"ipsam\",
+    \"address\": \"vawomlcoztkhvxkmztdcvpfvvpkoa\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/user/update"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "culpa",
+    "email": "nelda.ernser@example.com",
+    "gender": "ipsam",
+    "address": "vawomlcoztkhvxkmztdcvpfvvpkoa"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-user-update">
+</span>
+<span id="execution-results-POSTapi-v1-user-update" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-user-update"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-user-update"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-user-update" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-user-update"></code></pre>
+</span>
+<form id="form-POSTapi-v1-user-update" data-method="POST"
+      data-path="api/v1/user/update"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-user-update', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/user/update</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="POSTapi-v1-user-update"
+               value="culpa"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-v1-user-update"
+               value="nelda.ernser@example.com"
+               data-component="body" hidden>
+    <br>
+<p>Must be a valid email address.</p>
+        </p>
+                <p>
+            <b><code>gender</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text"
+               name="gender"
+               data-endpoint="POSTapi-v1-user-update"
+               value="ipsam"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text"
+               name="address"
+               data-endpoint="POSTapi-v1-user-update"
+               value="vawomlcoztkhvxkmztdcvpfvvpkoa"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 255 characters.</p>
+        </p>
+        </form>
+
+            
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>
